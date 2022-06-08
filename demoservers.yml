@@ -120,4 +120,3 @@ Outputs:
     WebAppLB:
       Description: Load balancer public
       Value: !Join ["", ["http://", !GetAtt WebAppLB.DNSName]]
-            #  !Join [ ",", [ !Ref PublicSubnet1, !Ref PublicSubnet2 ]]
