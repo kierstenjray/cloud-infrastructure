@@ -1,5 +1,5 @@
 Description: >
-    Kiersten Raymond / Udacity 2019
+    Kiersten Raymond / Udacity 2021
 
 Parameters:
     EnvironmentName:
@@ -57,7 +57,7 @@ Resources:
       ImageId: ami-09d56f8956ab235b3
       SecurityGroups:
       - Ref: WebServerSecGroup
-      InstanceType: t2.xlarge
+      InstanceType: t3.small
       BlockDeviceMappings:
       - DeviceName: "/dev/sdk"
         Ebs:
