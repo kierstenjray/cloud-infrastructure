@@ -55,8 +55,6 @@ Resources:
           sudo systemctl start apache2.service
           echo "It works! Udagram, Udacity" > /var/www/html/index.html          
       ImageId: ami-09d56f8956ab235b3
-      # ToDo: Remove KeyName before submitting project. 
-      # KeyName: Udacity Key Pair v2
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t2.xlarge
@@ -69,13 +67,12 @@ Resources:
     Properties:
       VPCZoneIdentifier:
       - Fn::ImportValue: 
-          # !Sub "${EnvironmentName}-PRIV-NETS"
-          !Sub ${EnvironmentName}-PUB1-SN
+          !Sub "${EnvironmentName}-PRIV-NETS"
 
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
       MinSize: '2'
-      MaxSize: '5'
+      MaxSize: '2'
       TargetGroupARNs:
       - Ref: WebAppTargetGroup
   WebAppLB:
